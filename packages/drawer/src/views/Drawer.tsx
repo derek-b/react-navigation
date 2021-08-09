@@ -23,7 +23,9 @@ const {
   clockRunning,
   startClock,
   stopClock,
-  interpolate,
+  interpolate: interpolateDeprecated,
+  // @ts-ignore
+  interpolateNode,
   spring,
   abs,
   add,
@@ -44,6 +46,9 @@ const {
   set,
   sub,
 } = Animated;
+
+const interpolate: typeof interpolateDeprecated =
+  interpolateNode ?? interpolateDeprecated;
 
 const TRUE = 1;
 const FALSE = 0;
